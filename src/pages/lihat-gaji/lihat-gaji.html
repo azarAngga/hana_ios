@@ -1,0 +1,124 @@
+<!--
+  Generated template for the LihatGaji page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lihat Gaji</ion-title>
+  </ion-navbar>	
+
+</ion-header>  
+	
+<ion-content padding>
+	<ion-list>
+	  <ion-item>
+	    <ion-label>Date</ion-label>
+	    <ion-select [(ngModel)]="bulan_in" >
+	      	<ion-option *ngFor="let item of bulan" value="{{item.bulan}}">{{item.bulan}}</ion-option>
+	    </ion-select>
+	    <ion-select [(ngModel)]="tahun_in" >
+	      	<ion-option *ngFor="let item of tahun" value="{{item.tahun}}">{{item.tahun}}</ion-option>
+	    </ion-select>
+	  </ion-item>
+	</ion-list>
+	
+	<ion-list>
+	  <ion-item>
+	    <ion-label>Type</ion-label>
+	    <ion-select [(ngModel)]="type_in" >
+	      	<ion-option *ngFor="let item of type" value="{{item.type}}">{{item.type}}</ion-option>
+	    </ion-select>
+	  </ion-item>
+	</ion-list>
+	
+	<button ion-button block (click)="putSubmit()">Submit</button>
+	<p></p>
+	<!-- slip gaji -->
+
+  <ion-item-group *ngFor="let data of json_slip_gaji" >
+    <ion-item-divider color="light">SLIP GAJI</ion-item-divider>
+    <ion-item >
+    	<h2>NIK</h2>
+		<ion-icon  item-right><h2><div style="width: 100px">{{data.nik}}</div></h2></ion-icon>
+	</ion-item>
+    <ion-item >
+    	<h2>Nama</h2>
+		<ion-icon item-right><h2><div style="width: 100px">{{data.nama_pegawai}}</div></h2></ion-icon>
+	</ion-item>
+	<ion-item >
+    	<h2>Jabatan</h2>
+		<ion-icon item-right><h2><div style="width: 110px">{{data.jabatan}}</div></h2></ion-icon>
+	</ion-item>
+	<ion-item >
+    	<h2>Lokasi Kerja</h2>
+		<ion-icon item-right><h2>{{data.lokasi_kerja}}</h2></ion-icon>
+	</ion-item>
+	<ion-item >
+    	<h2>Jenis Gaji</h2>
+		<ion-icon item-right><h2>{{data.jenis_gaji}}</h2></ion-icon>
+	</ion-item>
+	<ion-item >
+    	<h2>Periode</h2>
+		<ion-icon item-right><h2>{{data.periode}}</h2></ion-icon>
+	</ion-item>
+	<ion-item >
+    	<h2>Susunan Keluarga</h2>
+		<ion-icon item-right><h2>{{data.nik}}</h2></ion-icon>
+	</ion-item>
+	<ion-item >
+    	<h2>Jenis Kelamin</h2>
+		<ion-icon item-right><h2>{{data.jenis_kelamin}}</h2></ion-icon>
+	</ion-item>
+  </ion-item-group>
+	
+	<!-- Penghasilan -->
+	  <ion-item-group  >
+	    <ion-item-divider color="light">PENGHASILAN</ion-item-divider>
+	    <ion-item *ngFor="let data of json_penghasilan">
+	    	<h2><div ><b>{{data.keterangan}}</b></div></h2><br/><h2>Rp.{{data.value}}.00</h2>
+    		
+    	</ion-item>
+	  </ion-item-group>
+
+	<!-- Total Penghasilan -->
+	  <ion-item-group >
+	   	<ion-item color="blue">
+	    	<h1><b>Total Penghasilan</b></h1>
+    		<ion-icon item-right><h1><b>Rp.{{total_gaji}}.00</b></h1></ion-icon>
+    	</ion-item>
+	  </ion-item-group> 
+
+	<!-- Potongan -->
+	  <ion-item-group  >
+	    <ion-item-divider color="light">POTONGAN</ion-item-divider>
+	    <ion-item *ngFor="let data of json_potongan" text-wrap>
+	    	<h2><div ><b>{{data.keterangan}}</b></div></h2><br/><h2>Rp.{{data.value}}.00</h2>
+
+    	</ion-item>
+	  </ion-item-group>
+
+	<!-- Total Potongan -->
+	  <ion-item-group >
+	   	<ion-item color="blue">
+	    	<h1><b>Total Potongan</b></h1>
+    		<ion-icon item-right><h1><b>Rp.{{total_potongan}}.00</b></h1></ion-icon>
+    	</ion-item>
+	  </ion-item-group>
+
+		<ion-card>
+		  <ion-card-header text-wrap>
+		  	Gaji Bersih Anda bulan ini : Rp.{{gaji_bersih}}.00
+		  </ion-card-header>
+		  <ion-card-content>
+		  	{{kalimat}}
+		    <!-- Add card content here! -->
+		  </ion-card-content>
+		</ion-card>
+	
+</ion-content>

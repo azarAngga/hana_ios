@@ -1,0 +1,110 @@
+<!--
+  Generated template for the Training page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Training</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<!-- Sertifikat -->
+    <ion-item-divider>SERTIFIKAT</ion-item-divider>
+    <ion-item  color="light">
+    	<h2><b>Nama Sertifikat</b></h2>
+		<ion-icon item-right><h2><b>Nilai</b></h2></ion-icon>
+	</ion-item>
+  	<ion-item-group *ngFor="let data of json_sertifikat_list" >
+
+	    <ion-item >
+	    	<h2>{{data.nama_training}}</h2>
+			<ion-icon item-right><h2>{{data.nilai}}</h2></ion-icon>
+		</ion-item>
+  	</ion-item-group>
+
+<!-- brevet -->
+	<ion-item-divider>BREVET</ion-item-divider>
+	<ion-item  color="light">
+		<h2><b>Nama Training</b></h2>
+		<ion-icon item-right><h2><b>Nilai</b></h2></ion-icon>
+	</ion-item>
+	<ion-item-group *ngFor="let data of json_brevet" >
+		<ion-item >
+			<h2>{{data.nama_training}}</h2>
+			<ion-icon item-right><h2>{{data.nilai}}</h2></ion-icon>
+		</ion-item>
+	</ion-item-group>
+
+<!-- pelatihan external -->
+    <ion-item-divider>PELATIHAN EXTERNAL</ion-item-divider>
+    <ion-item  color="light">
+    	<h2><b>Nama Pelatihan External</b></h2>
+		<ion-icon item-right><h2><b>Nilai</b></h2></ion-icon>
+	</ion-item>
+	<ion-item-group *ngFor="let data of json_pelatihan_eksternal_list" >
+		<ion-item >
+			<h2>{{data.nama_training}}</h2>
+			<ion-icon item-right><h2>{{data.nilai}}</h2></ion-icon>
+		</ion-item>
+	</ion-item-group>
+
+<!-- pelatihan Internal -->
+    <ion-item-divider>PELATIHAN INTERNAL</ion-item-divider>
+    <ion-item  color="light">
+    	<h2><b>Nama Pelatihan Internal</b></h2>
+		<ion-icon item-right><h2><b>Nilai</b></h2></ion-icon>
+	</ion-item>
+	<ion-item-group *ngFor="let data of json_pelatihan_internal_list" >
+		<ion-item >
+			<h2>{{data.nama_training}}</h2>
+			<ion-icon item-right><h2>{{data.nilai}}</h2></ion-icon>
+		</ion-item>
+	</ion-item-group>
+
+<!-- pelatihan Reward -->
+    <ion-item-divider>REWARD</ion-item-divider>
+    <ion-item  color="light">
+    	<h2><b>Nama Reward</b></h2>
+		<ion-icon item-right><h2><b>Nilai</b></h2></ion-icon>
+	</ion-item>
+	<ion-item-group *ngFor="let data of json_reward_list" >
+		<ion-item >
+			<h2>{{data.nama_training}}</h2>
+			<ion-icon item-right><h2>{{data.nilai}}</h2></ion-icon>
+		</ion-item>
+	</ion-item-group>
+
+<!-- pelatihan Assessment -->
+    <ion-item-divider>ASSESSMENT</ion-item-divider>
+    <ion-item  color="light">
+    	<h2><b>Nama Assessment</b></h2>
+		<ion-icon item-right><h2><b>Nilai</b></h2></ion-icon>
+	</ion-item>
+  	<ion-item-group *ngFor="let data of json_assessment_list" >
+	    <ion-item >
+	    	<h2>{{data.nama_training}}</h2>
+			<ion-icon item-right><h2>{{data.nilai}}</h2></ion-icon>
+		</ion-item>
+  	</ion-item-group>
+
+<!-- pelatihan Elearning -->
+  	<ion-item-divider>ELEARNING</ion-item-divider>
+    <ion-item  color="light">
+    	<h2><b>Nama Elearning</b></h2>
+		<ion-icon item-right><h2><b>Nilai</b></h2></ion-icon>
+	</ion-item>
+	<ion-item-group *ngFor="let data of json_elearning_list" >
+	     <ion-item >
+	    	<h2>{{data.nama_training}}</h2>
+			<ion-icon item-right><h2>{{data.nilai}}</h2></ion-icon>
+		</ion-item>
+	</ion-item-group>
+</ion-content>

@@ -1,0 +1,21 @@
+{
+  "name": "ionic2-native-maps",
+  "description": "an ionic project",
+  "main": "",
+  "authors": [
+    "Ionic Framework"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "skitter-slideshow": "skitter#^5.1.4"
+  }
+}

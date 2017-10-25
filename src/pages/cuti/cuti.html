@@ -1,0 +1,115 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Form Cuti</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+<ion-card>
+  <ion-card-header>
+    <b>Approval</b>
+    <hr>
+  </ion-card-header>
+    <ion-card-content>
+        <b>Atasan :</b><br>
+        <label>{{jabatan_atasan}}</label><br>
+        <label>{{nama_atasan}} / {{nik_atasan}}</label><br>
+        <b>Pemeriksa </b><br>
+        <label>{{jabatan_pemeriksa}}</label><br>
+        <label>{{nama_pemeriksa}} / {{nik_pemeriksa}}</label><br>
+    </ion-card-content>
+</ion-card>
+
+<!-- Jenis cuti -->
+<ion-card>
+  <ion-card-header>
+    Jenis Cuti 
+  </ion-card-header>
+  <ion-list>
+     <ion-item >
+        <!-- <ion-select class="my-select" [(ngModel)]="jenis_cuti_in" (ionChange)="onChange($event)"> -->
+        <ion-select class="my-select" [(ngModel)]="jenis_cuti_in" >
+            <ion-option *ngFor="let jenis of json_data_jenis;let i=index" value="{{jenis.category_name}}" 
+              (ionSelect)="onChange(jenis.leave_category_id,jenis.category_name)"
+            >{{jenis.category_name}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+     JATAH : {{jatah}}
+   
+  </ion-list>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    <b>Tanggal Cuti</b>
+    <hr>
+  </ion-card-header>
+    <ion-card-content>
+        <table>
+          <tr>
+            <ion-item>
+              <ion-label>Mulai</ion-label>
+              <ion-datetime (ionChange)="onChangeMulai($event)" displayFormat="DD MMMM YYYY" pickerFormat="DD/MMMM/YYYY" [(ngModel)]="tanggal_mulai"></ion-datetime>
+          </ion-item>
+          </tr>
+          <tr>
+            <ion-item>
+              <ion-label>Selesai</ion-label>
+              <ion-datetime (ionChange)="onChangeSelesai($event)" displayFormat="DD MMMM YYYY" pickerFormat="DD/MMMM/YYYY" [(ngModel)]="tanggal_selesai"></ion-datetime>
+          </ion-item>
+          </tr>
+          <tr>
+            <ion-item>
+              <ion-label text-wrap><font size="2">*swap ke kanan jika cuti \npada hari sabtu,minggu dan hari libur</font></ion-label>
+              <ion-toggle [(ngModel)]="pepperoni" (ionChange)="onChangeToogle($event)"></ion-toggle>
+            </ion-item>
+          </tr>
+          <tr>
+            <hr/>
+              Jumlah : {{jumlah}}
+          </tr>
+        </table>
+    </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    <b>Keterangan Cuti</b>
+    <hr>
+  </ion-card-header>
+    <ion-card-content>
+        <ion-item>
+          <ion-label color="primary"  floating>Alamat selama cuti</ion-label>
+        <ion-input [(ngModel)]="alamat"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary" floating>Nomor Telepon</ion-label>
+        <ion-input [(ngModel)]="no_telp"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary" floating>Alasan Cuti</ion-label>
+        <ion-input [(ngModel)]="alasan"></ion-input>
+      </ion-item>
+      
+    </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    <b>Lampiran</b>
+    <hr>
+  </ion-card-header>
+    <ion-card-content>
+        <button ion-button (click)="openFile()">Browse File</button>
+        {{path}}
+    </ion-card-content>
+</ion-card>
+
+<button (click)="actionSubmit()" ion-button block>Submit</button>
+
+</ion-content>

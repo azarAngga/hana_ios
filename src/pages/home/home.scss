@@ -1,3 +1,109 @@
-page-home {
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+
+$green:#16a085;
+$grey:#ededed;
+
+body{
+  
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight:300;
+  font-size:40px;
+  color:#ffffff;
+ 
 
 }
+
+a {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color:#fff;
+
+
+ 
+}
+
+.clock-wrap{
+	width:250px;
+  font-family: 'Pathway Gothic One', sans-serif;
+	height:50px;
+
+}
+
+.min-wrap,
+.hour-wrap, .sec-wrap{
+	width:100px;
+	height:200px;
+	
+	float:left;
+	position: relative;
+}
+
+.min-wrap, .sec-wrap{
+	margin-left: 4px;
+}
+
+
+.digit-top, 
+.digit-bottom{
+	width:100px;
+	height:100px;
+}
+
+.clock-wrap .front, .clock-wrap .back{
+	width: 100px;
+	height: 130px;
+	overflow: hidden;
+  background:#eaeaea;
+	color:$green;
+	font-size: 75px;
+
+}
+
+.clock-wrap .front{
+
+	transform: rotateX(0deg);
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg); 
+	-o-transform: rotateX(0deg); 
+    backface-visibility: hidden;
+}
+
+.clock-wrap .back{
+	top:40px;
+    line-height:0;
+}
+
+
+.digit-top{
+	line-height:150px;
+//ini
+	z-index: 10;
+  
+}
+
+.digit-bottom{
+	top: 10px;
+	z-index: 0;
+  background:lighten($grey,50);
+}
+
+
+.hour-wrap:before, .min-wrap:before, .sec-wrap:before {
+  content:"";
+  background:#000000;
+  opacity:0.04;
+  position:absolute;
+  width:100px;
+  height:75px;
+  top:0;
+  left:0;
+  z-index:9999;
+}
+

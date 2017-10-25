@@ -1,14 +1,47 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+
+<ion-header >
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>HANA</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<!-- indikator -->
+ <img src="{{indikator}}" style="height:20px;width: 20px" />
+
+<div align="center"><font size="4">{{absen}}</font></div><br/>
+ <div align="center" style="margin: = 0,0,0,0">
+<div class="clock-wrap" style="margin-left: 40px">
+      <div class="hour-wrap">
+        <div class="digit-top">
+          <div class="front">{{date | date: 'H'}}</div>
+        </div>
+      </div>
+      <div class="min-wrap">
+        <div class="digit-top">
+          <div class="front">{{date | date: 'm'}}</div>
+        </div>
+      </div>
+      <font color="#16a085">{{date | date: 'a'}}</font>
+    </div>
+	<button ion-button (click)="putMasuk()">Absen Masuk</button>
+  <button ion-button  (click)="putKeluar()">Absen Pulang</button>
+
+
+</div>
+
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>v1.0</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+
+
+
